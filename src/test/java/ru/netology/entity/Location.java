@@ -33,5 +33,20 @@ public class Location {
         return builing;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Location other = (Location) obj;
 
+//        без проверки полей на null
+        return city.equals(other.getCity())
+                && this.country.equals(other.getCountry())
+                && this.street.equals(other.getStreet())
+                && this.builing == other.getBuiling();
+    }
 }
